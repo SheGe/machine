@@ -13,6 +13,17 @@ if ($CurrentDir -eq $env:USERPROFILE -or $CurrentDir -eq (Join-Path $env:windir 
 }
 Clear-Host
 
+# Load DockerCompletion
+$Global:DockerCompletionInstalled = (Get-Module -ListAvailable -Name DockerCompletion)
+if ($Global:DockerCompletionInstalled) {
+    Write-Host "Initializing DockerCompletion... " -NoNewline
+    Import-Module DockerCompletion
+    Write-Host "Done!" -ForegroundColor Green
+}
+else {
+    Write-Host "The DockerCompletion module has not been installed." -ForegroundColor Red
+}
+
 # Load posh-git
 $Global:PoshGitInstalled = (Get-Module -ListAvailable -Name posh-git)
 if ($Global:PoshGitInstalled) {
@@ -22,17 +33,6 @@ if ($Global:PoshGitInstalled) {
 }
 else {
     Write-Host "The posh-git module has not been installed." -ForegroundColor Red
-}
-
-# Load posh-docker
-$Global:PoshDockerInstalled = (Get-Module -ListAvailable -Name posh-docker)
-if ($Global:PoshDockerInstalled) {
-    Write-Host "Initializing posh-docker... " -NoNewline
-    Import-Module posh-docker
-    Write-Host "Done!" -ForegroundColor Green
-}
-else {
-    Write-Host "The posh-docker module has not been installed." -ForegroundColor Red
 }
 
 $Global:LOCALPROFILE = "<<LOCALPROFILE>>"

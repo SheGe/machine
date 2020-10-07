@@ -154,8 +154,10 @@ code --install-extension ms-azure-devops.azure-pipelines
 # Install Powershell Modules
 ##########################################################################
 
+Write-Host "Installing posh-git..."
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
-PowerShellGet\Install-Module posh-docker -Scope CurrentUser -Force
+Write-Host "Installing DockerCompletion..."
+PowerShellGet\Install-Module DockerCompletion -Scope CurrentUser -Force
 
 ##########################################################################
 # Restore Temporary Settings
