@@ -4,6 +4,8 @@ $Global:AzureDevOpsSourceLocation = "<<AZURELOCATION>>"
 $Global:BitBucketSourceLocation = "<<BITBUCKETLOCATION>>"
 $Global:GitLabSourceLocation = "<<GITLABLOCATION>>"
 
+$env:PROMPT_PROVIDER = "OhMyPosh2"
+
 # Load the profile
 . "<<PROFILE>>"
 
@@ -42,14 +44,8 @@ if (Test-Path $Global:LOCALPROFILE) {
     Write-Host "Done!" -ForegroundColor Green
 }
 
-if($null -ne $env:PREFER_OLD_PROMPT) {
-    . "<<PROMPT>>"
-} else {
-    # Initialize Starship
-    $StarshipVersion = starship --version
-    if ($null -ne $StarshipVersion -and $StarshipVersion -ne "") {
-        Write-Host "Initializing Starship... " -NoNewline
-        Invoke-Expression (&starship init powershell)
-        Write-Host "Done!" -ForegroundColor Green
-    }
+switch ($env:PROMPT_PROVIDER) {
+    "Starship" { . "<<STARSHIP_PROMPT>>" }
+    "OhMyPosh2" { . "<<OHMYPOSH2_PROMPT>>" }
+    default    { . "<<PROMPT>>" }
 }

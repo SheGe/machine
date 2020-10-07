@@ -30,12 +30,16 @@ if (-not (Test-Path -Path $PROFILE)) {
 $PowerShellProfileTemplatePath = Join-Path $PSScriptRoot "Profile.template"
 $PowerShellProfilePath = (Join-Path $PSScriptRoot "Roaming.ps1")
 $PowerShellPromptPath = (Join-Path $PSScriptRoot "Prompt.ps1")
+$StarshipPromptPath = (Join-Path $PSScriptRoot "StarshipPrompt.ps1")
+$OhMyPosh2PromptPath = (Join-Path $PSScriptRoot "OhMyPosh2Prompt.ps1")
 $PowerShellLocalProfilePath = Join-Path (Get-Item $PROFILE).Directory.FullName "LocalProfile.ps1"
 Copy-Item -Path $PowerShellProfileTemplatePath -Destination $PROFILE
 
 $Tokens = [hashtable]@{
     '<<PROFILE>>'=$PowerShellProfilePath
     '<<PROMPT>>'=$PowerShellPromptPath
+    '<<STARSHIP_PROMPT>>'=$StarshipPromptPath
+    '<<OHMYPOSH2_PROMPT>>'=$OhMyPosh2PromptPath
     '<<LOCALPROFILE>>'=$PowerShellLocalProfilePath
     '<<SRCROOTLOCATION>>'=$Script:RootSourceLocation
     '<<GITHUBLOCATION>>'=$Script:GitHubSourceLocation

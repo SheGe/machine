@@ -159,6 +159,13 @@ PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
 Write-Host "Installing DockerCompletion..."
 PowerShellGet\Install-Module DockerCompletion -Scope CurrentUser -Force
 
+Write-Host "Installing NuGet package provider..."
+PackageManagement\Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+Write-Host "Installing PSReadLine..."
+PowerShellGet\Install-Module PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
+Write-Host "Installing oh-my-posh..."
+PowerShellGet\Install-Module oh-my-posh -Scope CurrentUser -Force
+
 ##########################################################################
 # Restore Temporary Settings
 ##########################################################################
