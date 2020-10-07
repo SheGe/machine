@@ -136,11 +136,6 @@ code --install-extension adamhartford.vscode-base64
 code --install-extension monokai.theme-monokai-pro-vscode
 
 # ------------------------------------------------------------------------
-# Build tools/systems
-# ------------------------------------------------------------------------
-code --install-extension cake-build.cake-vscode
-
-# ------------------------------------------------------------------------
 # Docker/Kubernetes
 # ------------------------------------------------------------------------
 code --install-extension ms-azuretools.vscode-docker
@@ -148,6 +143,12 @@ code --install-extension exiasr.hadolint
 code --install-extension mikestead.dotenv
 code --install-extension redhat.vscode-yaml
 code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+
+# ------------------------------------------------------------------------
+# Build tools/systems
+# ------------------------------------------------------------------------
+code --install-extension cake-build.cake-vscode
+code --install-extension ms-azure-devops.azure-pipelines
 
 ##########################################################################
 # Install Powershell Modules
