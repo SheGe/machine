@@ -94,7 +94,6 @@ choco upgrade --cache="$ChocoCachePath" --yes epicgameslauncher
 choco upgrade --cache="$ChocoCachePath" --yes geforce-experience
 choco upgrade --cache="$ChocoCachePath" --yes geforce-experience-disable-updates-winconfig
 choco upgrade --cache="$ChocoCachePath" --yes obs-studio
-choco upgrade --cache="$ChocoCachePath" --yes obs-virtualcam
 choco upgrade --cache="$ChocoCachePath" --yes origin
 choco upgrade --cache="$ChocoCachePath" --yes steam
 choco upgrade --cache="$ChocoCachePath" --yes tidal
