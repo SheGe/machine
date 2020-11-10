@@ -41,5 +41,6 @@
   "zenMode.hideTabs": true,
   "[json]": {
     "editor.maxTokenizationLineLength": 30000
-  }
+  },
+  "editor.columnSelection": false
 }

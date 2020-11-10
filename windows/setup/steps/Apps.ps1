@@ -61,6 +61,7 @@ choco upgrade --cache="$ChocoCachePath" --yes powershell-core --install-argument
 # ------------------------------------------------------------------------
 
 choco upgrade --cache="$ChocoCachePath" --yes 7zip.install
+choco upgrade --cache="$ChocoCachePath" --yes asio4all
 choco upgrade --cache="$ChocoCachePath" --yes curl
 choco upgrade --cache="$ChocoCachePath" --yes cmake.portable
 choco upgrade --cache="$ChocoCachePath" --yes chocolateygui --params "/ShowConsoleOutput=$true /UseDelayedSearch=$false /OutdatedPackagesCacheDurationInMinutes=120 /DefaultToTileViewForLocalSource"
