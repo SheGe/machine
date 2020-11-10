@@ -20,7 +20,6 @@ New-Item -Path $ChocoCachePath -ItemType Directory -Force
 if($env:UserName -ne "WDAGUtilityAccount") { # Can't install this on Sandbox
     choco install --cache="$ChocoCachePath" --yes Microsoft-Windows-Subsystem-Linux -source windowsfeatures
     choco install --cache="$ChocoCachePath" --yes VirtualMachinePlatform -source windowsfeatures
-    choco install --cache="$ChocoCachePath" --yes Microsoft-Hyper-V-All -source windowsFeatures
 }
 
 ##########################################################################
